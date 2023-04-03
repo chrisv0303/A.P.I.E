@@ -20,12 +20,4 @@ public abstract class Employee extends Person {
     public void setId(int id) {
         Id = id;
     }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "Id=" + Id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

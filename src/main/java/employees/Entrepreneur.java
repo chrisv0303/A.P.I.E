@@ -40,6 +40,4 @@ public class Entrepreneur extends Person {
                 ", expenses are " + expenses +
                 '}';
     }
-
-
 }

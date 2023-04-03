@@ -3,7 +3,7 @@ package employees;
 public class Tester {
     public static void main(String[] args) {
 
-        hourlyEmployee Emp1 = new hourlyEmployee("Mike");
+        hourlyEmployee Emp1 = new hourlyEmployee("David");
         System.out.println(Emp1.printBadge());
         Emp1.setHoursWorked(40);
         Emp1.setRate(25.0);

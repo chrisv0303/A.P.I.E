@@ -16,12 +16,6 @@ public class hourlyEmployee extends Employee {
         return className + " : " + name + "\n" + "Employee ID : " + Id;
     }
 
-    @Override
-    public void printPay() {
-        double totalProfit = hoursWorked * rate;
-        System.out.println("Hourly Employee's pay is $" + totalProfit);
-    }
-
     public int getHoursWorked() {
         return hoursWorked;
     }
@@ -38,4 +32,9 @@ public class hourlyEmployee extends Employee {
         this.rate = rate;
     }
 
+    @Override
+    public void printPay() {
+        double totalProfit = hoursWorked * rate;
+        System.out.println("Hourly Employee's pay is $" + totalProfit);
+    }
 }
