@@ -2,17 +2,40 @@ package employees;
 
 public class hourlyEmployee extends Employee {
 
-    private double hoursWorked;
-    private double hourlyRate;
+    private static int hoursWorked;
+    private static double rate;
 
-    public hourlyEmployee(String name, int ID, double hoursWorked, double hourlyRate){
-        super(name, ID);
-        this.hoursWorked = hoursWorked;
-        this.hourlyRate = hourlyRate;
+
+    public hourlyEmployee(String name) {
+        super(name);
     }
 
-    public double calculatePay(){
-        return hoursWorked * hourlyRate;
+    String className = this.getClass().getSimpleName();
+
+    public String printBadge(){
+        return className + " : " + name + "\n" + "Employee ID : " + Id;
+    }
+
+    @Override
+    public void printPay() {
+        double totalProfit = hoursWorked * rate;
+        System.out.println("Hourly Employee's pay is $" + totalProfit);
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
 }

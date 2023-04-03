@@ -1,45 +1,30 @@
 package employees;
 
-public class Employee {
+public abstract class Employee extends Person {
 
-    private int ID;
-    private String name;
+    protected int Id;
 
-    public Employee (String name, int ID){
-        this.ID = ID;
-        this.name = name;
+    private static int counter = 0;
+
+    String className = this.getClass().getSimpleName();
+
+    public Employee(String name) {
+        super(name);
+        Id = ++counter;
     }
 
-    public static void printBadge(){
-        System.out.println(uniqueID);
+    public int getId() {
+        return Id;
     }
 
-    private static int uniqueID = 0;
-
-    public Employee(){
-        ID = ++uniqueID;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        Id = id;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "ID=" + ID +
+                "Id=" + Id +
                 ", name='" + name + '\'' +
                 '}';
     }
