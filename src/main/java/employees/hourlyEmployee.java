@@ -1,21 +1,16 @@
 package employees;
 
-public class hourlyEmployee extends Employee {
+public class hourlyEmployee extends Employee implements Payable{
 
     private static int hoursWorked;
     private static double rate;
 
-
+    //Constructor
     public hourlyEmployee(String name) {
         super(name);
     }
 
-    String className = this.getClass().getSimpleName();
-
-    public String printBadge(){
-        return className + " : " + name + "\n" + "Employee ID : " + Id;
-    }
-
+    //Setters & Getters
     public int getHoursWorked() {
         return hoursWorked;
     }
@@ -32,9 +27,19 @@ public class hourlyEmployee extends Employee {
         this.rate = rate;
     }
 
+    //Assigned variable to get the name of this class
+    String className = this.getClass().getSimpleName();
+
+    //Override Method from Employee class
     @Override
-    public void printPay() {
+    public String printBadge(){
+        return className + " : " + getName() + "\n" + "Employee ID : " + getId();
+    }
+
+    //Override Method from Person class
+    @Override
+    public void calculatePay() {
         double totalProfit = hoursWorked * rate;
-        System.out.println("Hourly Employee's pay is $" + totalProfit);
+        System.out.println(getName()+ "'s pay is $" + totalProfit);
     }
 }

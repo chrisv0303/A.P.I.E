@@ -2,17 +2,27 @@ package employees;
 
 public abstract class Employee extends Person {
 
-    protected int Id;
+    private int Id;
 
     private static int counter = 0;
 
-    String className = this.getClass().getSimpleName();
+    private double discount = 0.10;
 
+    //Constructor
     public Employee(String name) {
         super(name);
         Id = ++counter;
     }
 
+    public Employee(double discount){
+        this.discount = discount;
+    }
+
+
+    //Method
+    public abstract String printBadge();
+
+    //Getters & Setters
     public int getId() {
         return Id;
     }
@@ -20,4 +30,5 @@ public abstract class Employee extends Person {
     public void setId(int id) {
         Id = id;
     }
+
 }
